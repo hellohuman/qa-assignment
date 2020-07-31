@@ -1,6 +1,6 @@
 # QA Take-Home Assignment
 
-A small take-home assignment for QA candidates to demonstrate working knowledge of web user interface and API testing.
+A small take-home assignment for QA candidates to demonstrate working knowledge of web user interface and API testing along with helping safe guard quality.
 
 ## User interface testing
 
@@ -19,6 +19,10 @@ The choice of what is automated vs. manual and how many tests to create is up to
 * Document the automated tests with sufficient detail for others to be able to run them
 * Create manual tests with sufficient documentation for others to replicate them and achieve the same results
 
-The candidate should also think about and suggest improvements to the application. This task is deliberately open ended and 5-10 suggestions is sufficient, however areas such as handling of error cases, consistency/quality of user experience, and potential security or system attack risks should be considered.
-
 ## API testing
+
+Use the publicly available [Conduit](duit.productionready.io/api/) API to create a set of automated API tests. This is the same API used by the site in the *User interface testing* section, and the scenarios you cover there should guide the scenarios you cover with the API tests. There is additionally an [API spec](https://github.com/gothinkster/realworld/tree/master/api) which describes some of the calls, though you will also need to use experimentation to learn how they function.
+
+## Suggestions for quality
+
+This last section is about applying a QA mindset to the API and user interface to suggest improvements to the application and explain why the suggestion is being made. This task is deliberately open ended and 5-10 suggestions is sufficient. Areas could include things like handling/responses to error cases, consistency/quality of user experience, relevance of API request results and thoughts on security/risk.
