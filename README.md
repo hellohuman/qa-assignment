@@ -1,11 +1,14 @@
-# Test Project for Conduit app 
+# Test Suite for Conduit app 
 
 This repository contains test scripts for testing Conduit app.
 ## User interface testing
 There are two sets of test suites available for UI testing
 
-1) using Java, selenium, testng and maven
-2) using Javascript and Cypress
+1) using Java, selenium, testng and maven (see conduit folder)
+  * Key features: 
+    * data driven approach in order to keep data separate from functional test logic and to aid with quick scaling
+    * page object pattern to avoid tests being too sensitive to UI changes.
+2) using Javascript and Cypress (see cy-test folder)
 
 Test cases covered
 * Sign up of a new user
@@ -15,6 +18,7 @@ Test cases covered
 
 Selenium test run results
 ![picture](conduit/test-output/selenium_0.png)
+![picture](conduit/test-output/selenium_1.png)
 
 Cypress test results
 ![picture](cy-test/cypress_test_results.png)
