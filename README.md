@@ -23,6 +23,18 @@ Cypress test results
 ## API testing
 
 API tests are built using Java and Rest Assured. 
+Test cases covered
+* Auth - token generation
+* Get user with valid token
+* Get user with invalid token
+* User Signup (no auth required)
+* User Login (no auth required)
+* Get all articles 
+
+Test results
+![picture](conduit/test-output/api_test_0.png)
+![picture](conduit/test-output/api_test_1.png)
+
 
 ## Suggestions for quality
 
