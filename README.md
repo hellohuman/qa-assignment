@@ -1,30 +1,81 @@
-# QA Take-Home Assignment
+# Test Suite for Conduit app 
 
-A small take-home assignment for you to demonstrate working knowledge of web user interface and API testing along with helping safe guard quality.
+This repository contains test scripts for testing Conduit app using selenium and cypress.
 
 ## User interface testing
+There are two sets of test suites available for UI testing
+1) using Java, selenium, testng and maven (see conduit folder)
+  * Key features: 
+    * data driven approach in order to keep data separate from functional test logic and to aid with quick scaling
+    * page object pattern to avoid tests being too sensitive to UI changes.
+2) using Javascript and Cypress (see cy-test folder)
 
-Use the publicly available [Conduit](https://demo.realworld.io/) sample to create a suite of manual and automated tests that show some of:
+### Front end testcases covered
 * Sign up of a new user
 * User login
-* *Global Feed* loading progress and final state
 * Navigation to an article
 * Creation of a new article
 
-Note that whatever password you use on this site should be considered insecure, and you should not rely on existing records or accounts as they may be removed at any time.
+### API testing
+API tests are built using Java and Rest Assured. 
+Test cases covered
+* Auth - token generation
+* Get user with valid token
+* Get user with invalid token
+* User Signup (no auth required)
+* User Login (no auth required)
+* Get all articles 
 
-The choice of what is automated vs. manual and how many tests to create is up to you. It should be guided by the idea that this is to showcase that you can:
-* Create automated tests that run against the user interface and report their results
-* Store the automated tests in a Github repository
-* Document the automated tests with sufficient detail for others to be able to run them
-* Create manual tests with sufficient documentation for others to replicate them and achieve the same results
+###Installation/Pre-requisite
+```
+	Java 1.8 [Mandatory for selenium run]
+	Maven 3.6.3 [Mandatory for selenium run]
+	npm [Mandatory for cypress run]
+```
 
-## API testing
+### Run the test cases for selenium
+```
+sh selenium.sh
+```
+### Run the test cases for cypress
+```
+sh cypress.sh
+```
 
-Use the publicly available [Conduit](duit.productionready.io/api/) API to create a set of automated API tests. This is the same API used by the site in the *User interface testing* section, and the scenarios you cover there should guide the scenarios you cover with the API tests. There is additionally an [API spec](https://github.com/gothinkster/realworld/tree/master/api) which describes some of the calls, though you will also need to use experimentation to learn how they function.
+### Selenium test run results
+![picture](conduit/test-output/selenium_0.png)
+![picture](conduit/test-output/selenium_1.png)
+
+### Cypress test results
+![picture](cy-test/cypress_test_results.png)
+
+
+### API Test results
+![picture](conduit/test-output/api_test_0.png)
+![picture](conduit/test-output/api_test_1.png)
+
 
 ## Suggestions for quality
 
-This last section is about applying a QA mindset to the API and user interface to suggest improvements to the application and explain why the suggestion is being made. This task is deliberately open ended and 5-10 suggestions is sufficient.
-We recommend focusing on things like handling/responses to error cases, consistency/quality of user experience, relevance of API request results and thoughts on security/risk.
-Good luck :v:
+Relevance of API request/results
+* Get articles for global feed has total count 500, but with offset greater than 500, still returns result.
+
+Response issues
+* My feed does not populate(https://conduit.productionready.io/api/articles/feed?limit=10&offset=0) - Bug
+
+User Experience
+* Logout is not accessible
+* Multiple empty tags shown
+* Global feed loading is slow
+* Site is not mobile responsive
+* some images missing
+
+Security/Risks:
+* Token generated doesn't expire.
+* Api's work in http protocol
+
+
+## Future Enhancements worth investing
+- [ ] Convert to docker image(Add dockerfile with all installations software handled in it)
+- [ ] Add docker build and run on environment as part of CI/CD
+- [ ] Send test results in email/slack channel
