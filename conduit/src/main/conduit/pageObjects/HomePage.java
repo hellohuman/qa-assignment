@@ -12,10 +12,10 @@ public class HomePage extends PageObject{
 	@FindBy(xpath="/html/body/div/app-header/nav/div/ul[2]/li[2]/a")
 	private WebElement newArticleLink;
 	
-	@FindBy(xpath="html/body/div/div/div/div[2]/div/div[1]/div/ul/li[2]/a")
+	@FindBy(xpath="/html/body/div/div/div/div[2]/div/div[1]/div/ul/li[2]/a")
 	private WebElement globalFeed;
 	
-	@FindBy(xpath="html/body/div/div/div/div[2]/div/div[1]/article-list/article-preview[2]/div/a/h1")
+	@FindBy(xpath="/html/body/div/div/div/div[2]/div/div[1]/article-list/article-preview[1]/div/a")
 	private WebElement testArticle;
 	
 	
